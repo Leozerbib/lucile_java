@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <Pane prefHeight="538.0" prefWidth="286.0">
+         <children>
+            <SplitPane dividerPositions="0.8183520599250936" orientation="VERTICAL" prefHeight="538.0" prefWidth="220.0" style="-fx-background-color: blue; -fx-border-color: yellow;">
+              <items>
+                  <VBox alignment="TOP_CENTER" prefHeight="427.0" prefWidth="220.0" spacing="10.0">
+                     <children>
+                        <Label text="Jo Calendar" textFill="RED">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="30.0" top="30.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: blue; -fx-border-color: red; -fx-border-radius: 15; -fx-background-radius: 15;" text="My info" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: blue; -fx-border-color: red; -fx-border-radius: 15; -fx-background-radius: 15;" text="Score" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: blue; -fx-border-color: red; -fx-border-radius: 15; -fx-background-radius: 15;" text="Calendrier" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: blue; -fx-border-color: red; -fx-border-radius: 15; -fx-background-radius: 15;" text="Button" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Pane prefHeight="155.0" prefWidth="210.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="94.0" prefWidth="212.0">
+                           <children>
+                              <Label text="!!!!! !!!!!!" textFill="RED" />
+                              <HBox alignment="CENTER" prefHeight="48.0" prefWidth="212.0" spacing="15.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: yellow; -fx-background-radius: 15;" text="deconexion" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+              </items>
+            </SplitPane>
+         </children>
+      </Pane>
+      <SubScene fill="WHITE" height="540.0" width="640.0">
+        <root>
+          <Region />
+        </root>
+      </SubScene>
+   </items>
+</SplitPane>
