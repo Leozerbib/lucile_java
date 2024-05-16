@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Isep.a1.JO.PlanningJO.Controler.fx.MainControler" >
    <items>
       <Pane prefHeight="538.0" prefWidth="286.0">
          <children>
@@ -53,7 +53,7 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="94.0" prefWidth="212.0">
                            <children>
-                              <Label text="!!!!! !!!!!!" textFill="RED" />
+							 <Label fx:id="userLabel" text="!!!!! !!!!!!" textFill="RED" />
                               <HBox alignment="CENTER" prefHeight="48.0" prefWidth="212.0" spacing="15.0">
                                  <children>
                                     <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: yellow; -fx-background-radius: 15;" text="deconexion" />
@@ -67,10 +67,10 @@
             </SplitPane>
          </children>
       </Pane>
-      <SubScene fill="WHITE" height="540.0" width="640.0">
-        <root>
-          <Region />
-        </root>
-      </SubScene>
+	<SubScene fill="WHITE" height="540.0" width="640.0" fx:id="subSceneRoot">
+	    <root>
+	        <Region  />
+	    </root>
+	</SubScene>
    </items>
 </SplitPane>

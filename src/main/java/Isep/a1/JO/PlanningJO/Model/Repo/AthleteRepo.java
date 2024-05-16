@@ -22,8 +22,15 @@ public class AthleteRepo {
 	public static final String GET_BY_NAME = 
 			"SELECT * FROM athlete a "
 			+ "left join sport s on a.sportid = s.sportID "
-			+ "left join country c on c.Code = a.countryID "
+			+ "left join country c on c.code = a.countryID "
 			+ "WHERE a.name = ? ";
+	
+	public static final String GET_BY_NAME_LASTNAME = 
+			"SELECT * FROM athlete a "
+			+ "left join sport s on a.sportid = s.sportid "
+			+ "left join country c on c.code = a.countryid "
+			+ "WHERE a.name = ? "
+			+ "AND a.lastname = ? ";
 	
 	public static final String GET_BY_COUNTRY = 
 			"SELECT * FROM athlete a "

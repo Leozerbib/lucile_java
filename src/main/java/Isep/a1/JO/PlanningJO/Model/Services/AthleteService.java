@@ -9,6 +9,7 @@ import java.util.List;
 import Isep.a1.JO.PlanningJO.Config.ConnectionDB;
 import Isep.a1.JO.PlanningJO.Model.Constructeur.CreateUser;
 import Isep.a1.JO.PlanningJO.Model.Entity.Athlete;
+import Isep.a1.JO.PlanningJO.Model.Entity.Country;
 import Isep.a1.JO.PlanningJO.Model.Repo.AthleteRepo;
 
 public class AthleteService {
@@ -21,6 +22,16 @@ public class AthleteService {
 		stmt.setInt(1, id);
 		ResultSet obj = stmt.executeQuery();
 		System.out.println(obj);
+	}
+	
+	public Athlete getAthleteByNameAndLastname(String name,String lastname) throws SQLException {
+		String query = AthleteRepo.GET_BY_NAME_LASTNAME;
+		Connection connection = ConnectionDB.getConnection();
+		PreparedStatement stmt = connection.prepareStatement(query);
+		stmt.setString(1, name);
+        stmt.setString(2, lastname);
+		ResultSet obj = stmt.executeQuery();
+		return Athlete.mapper(obj.next() ? obj : null);
 	}
 	
 	public ResultSet getAthleteByName(String name) throws SQLException {
@@ -62,7 +73,10 @@ public class AthleteService {
 		stmt.setInt(5, createUser.getSport().getSportID());
 		stmt.setString(6, createUser.getCountry().getCode());
 		stmt.setString(7, createUser.getPassword());
-		System.out.println(stmt.executeQuery());
+		if (stmt.executeUpdate() == 1) {
+			System.out.println("Athlete inserted successfully");
+		}
+		
 	}
 	
 }
