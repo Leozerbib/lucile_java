@@ -3,6 +3,7 @@ package Isep.a1.JO.PlanningJO.Model.Entity;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -27,6 +28,24 @@ public class Athlete {
 	public String getFullName() {
 		return this.name + " " + this.lastName;
 	}
+	
+    public static List<Integer> genererListeIdentifiants() {
+        List<Integer> identifiants = new ArrayList<>();
+        
+        // Ajouter des identifiants de 8 chiffres
+        identifiants.add(12345678);
+        identifiants.add(23456789);
+        identifiants.add(34567890);
+        identifiants.add(45678901);
+        identifiants.add(56789012);
+        identifiants.add(67890123);
+        identifiants.add(78901234);
+        identifiants.add(89012345);
+        identifiants.add(90123456);
+        identifiants.add(12345679); // Ajouter autant d'identifiants que nécessaire
+        
+        return identifiants;
+    }
     
     public static Athlete mapper(ResultSet resultSet) throws SQLException {
     	Country country = new Country(resultSet.getString(14), resultSet.getString(15), resultSet.getString(16));

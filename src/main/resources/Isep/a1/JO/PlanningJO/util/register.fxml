@@ -20,14 +20,25 @@
     <children>
         <GridPane hgap="10" prefHeight="413.0" prefWidth="530.0" vgap="10">
             <children>
-                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Nom :" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.valignment="TOP" />
-                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Prénom :" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Âge :" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.valignment="TOP" />
-                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Genre :" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.valignment="TOP" />
-                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Sport :" GridPane.rowIndex="4" GridPane.valignment="TOP" />
-                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Pays :" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.valignment="TOP" />
-                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Mot de passe :" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Identifiant :" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.valignment="TOP" />
+                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Nom :" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Prénom :" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Âge :" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Genre :" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Sport :" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Pays :" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+                <Label alignment="TOP_LEFT" contentDisplay="TOP" text="Mot de passe :" GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.valignment="TOP" />
             <VBox prefWidth="300.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+               <children>
+                      <TextField fx:id="identifiantField" prefHeight="100.0" prefWidth="100.0" />
+                      <Label fx:id="identifiantError" prefHeight="30.0" textFill="red">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefWidth="300.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.rowIndex="1">
                <children>
                       <TextField fx:id="nameField" prefHeight="100.0" prefWidth="100.0" />
                       <Label fx:id="nameError" prefHeight="30.0" textFill="red">
@@ -37,7 +48,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                       <TextField fx:id="lastNameField" prefHeight="100.0" />
                       <Label fx:id="lastNameError" prefHeight="30.0" textFill="red">
@@ -47,7 +58,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
                       <PasswordField fx:id="passwordField" prefHeight="100.0" />
                       <Label fx:id="passwordError" prefHeight="30.0" textFill="red">
@@ -57,7 +68,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
                   <ChoiceBox fx:id="countryBox" prefWidth="350.0" />
                       <Label fx:id="countryError" prefHeight="30.0" textFill="red">
@@ -67,7 +78,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
                   <ChoiceBox fx:id="sportBox" prefWidth="350.0" />
                       <Label fx:id="sportError" prefHeight="30.0" textFill="red">
@@ -77,7 +88,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
                   <ChoiceBox fx:id="genderBox" prefWidth="350.0" />
                       <Label fx:id="genderError" prefHeight="30.0" textFill="red">
@@ -87,7 +98,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <VBox prefHeight="50.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
                       <TextField fx:id="ageField" prefHeight="100.0" />
                       <Label fx:id="ageError" prefHeight="30.0" textFill="red">

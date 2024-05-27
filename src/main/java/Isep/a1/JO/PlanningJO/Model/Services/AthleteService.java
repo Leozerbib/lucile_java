@@ -15,14 +15,17 @@ import Isep.a1.JO.PlanningJO.Model.Repo.AthleteRepo;
 public class AthleteService {
 	
 	
-	public void getAthleteById(Integer id) throws SQLException {
+	public Athlete getAthleteById(Integer id) throws SQLException {
 		String query = AthleteRepo.GET_BY_ID;
 		Connection conn = ConnectionDB.getConnection();
 		PreparedStatement stmt = conn.prepareStatement(query);
 		stmt.setInt(1, id);
 		ResultSet obj = stmt.executeQuery();
 		System.out.println(obj);
+		return Athlete.mapper(obj.next() ? obj : null);
 	}
+	
+	
 	
 	public Athlete getAthleteByNameAndLastname(String name,String lastname) throws SQLException {
 		String query = AthleteRepo.GET_BY_NAME_LASTNAME;

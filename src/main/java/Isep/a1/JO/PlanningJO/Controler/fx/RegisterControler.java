@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import org.w3c.dom.UserDataHandler;
+
 import Isep.a1.JO.PlanningJO.App;
 import Isep.a1.JO.PlanningJO.Config.PasswordEncoder;
 import Isep.a1.JO.PlanningJO.Controler.AthleteControler;
@@ -59,6 +61,9 @@ public class RegisterControler {
 
     @FXML
     public PasswordField passwordField;
+    
+    @FXML
+    public TextField identifiantField;
     	
     public void initialize() throws SQLException {
         ObservableList<Sport> sports = FXCollections.observableArrayList(sportService.getAllSport());
@@ -97,6 +102,9 @@ public class RegisterControler {
 
     @FXML
     public Label countryError;
+    
+    @FXML
+    public Label identifiantError;
 
     // ... la méthode initialize et les autres méthodes existantes ...
 
@@ -128,6 +136,10 @@ public class RegisterControler {
         // Vous pouvez personnaliser cette méthode pour vérifier la sécurité du mot de passe
         return password.length() >= 8;
     }
+    
+	private boolean isValidIdentifiant(int identifiant) {
+		return identifiant != 0 && Athlete.genererListeIdentifiants().contains(identifiant);
+	}
 
     private void clearErrors() {
         nameError.setText("");
@@ -155,6 +167,7 @@ public class RegisterControler {
         Sport sport = sportBox.getValue();
         Country country = countryBox.getValue();
         String password = passwordField.getText();
+        int identifiant = Integer.parseInt(identifiantField.getText());
 
         if (!isValidName(name)) {
             nameError.setText("Nom invalide ou déjà existant");
@@ -204,11 +217,18 @@ public class RegisterControler {
             passwordError.setStyle("-fx-text-fill: red;");
             errors.add("Mot de passe pas assez sécurisé");
         }
+        
+		if (!isValidIdentifiant(Integer.parseInt(identifiantField.getText()))) {
+			identifiantError.setText("Identifiant invalide");
+			identifiantError.setFont(javafx.scene.text.Font.font("System", 3));
+			identifiantError.setStyle("-fx-text-fill: red;");
+			errors.add("Identifiant invalide");
+		}
 
 		if (!errors.isEmpty()) {
 			return;
 		}
-        CreateUser createUser = new CreateUser(name, lastName, age, gender, sport, country, PasswordEncoder.encryptPassword(password));
+        CreateUser createUser = new CreateUser(name, lastName, age, gender, sport, country, PasswordEncoder.encryptPassword(password),identifiant);
         System.out.println(createUser.toString());
         athleteService.insertAthlete(createUser);
         

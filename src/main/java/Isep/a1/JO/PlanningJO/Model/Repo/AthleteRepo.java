@@ -11,7 +11,7 @@ public class AthleteRepo {
 			"SELECT * FROM athlete a "
 			+ "left join sport s on a.sportid = s.sportID "
 			+ "left join country c on c.Code = a.countryID "
-			+ "WHERE a.id = ? ";
+			+ "WHERE a.identifiant = ? ";
 	
 	public static final String GET_BY_SPORT = 
 			"SELECT * FROM athlete a "

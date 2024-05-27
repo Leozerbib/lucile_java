@@ -23,5 +23,6 @@ public class CreateUser {
     private Sport sport; // Foreign key referencing Sport table
     private Country country; // Foreign key referencing Country table
     private String password;
+    private int identifiant;
 
 }
