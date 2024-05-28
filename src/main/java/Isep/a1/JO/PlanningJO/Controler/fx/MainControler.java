@@ -27,19 +27,35 @@ public class MainControler {
         loadDetailAccount();
     }
 
-    private void loadDetailAccount() {
+    @FXML
+    public void loadDetailAccount() {
+    	System.out.println("loadDetailAccount");
         try {
+        	
             FXMLLoader loader = new FXMLLoader(App.class.getResource("page/DetailAccount.fxml"));
             Parent root = loader.load();
-
-            DetailAccountControler detailAccountControler = loader.getController();
-            detailAccountControler.setAthleteData(athlete);
-
+            
+            DetailAccountControler detailAccountController = loader.getController();
+            detailAccountController.setAthleteData(athlete);
             subSceneRoot.setRoot(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-}
+    @FXML
+    public void loadScoresView() {
+        try {
 
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("page/Score.fxml"));
+            System.out.println("ScoreControler initialize");
+            Parent root = loader.load();
+            SubScene subScene = new SubScene(root, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
+            subSceneRoot = subScene;
+        } catch (IOException e) {
+            System.err.println("Failed to load Score.fxml: " + e.getMessage());
+            
+            e.printStackTrace();
+        }
+    }
+}
