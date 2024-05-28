@@ -67,6 +67,20 @@ public class MainControler {
             e.printStackTrace();
         }
     }
+    
+    @FXML
+    public void loadDetailEvent() {
+    	System.out.println("loadDetailCalendar");
+        try {
+        	
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("page/Event.fxml"));
+            Parent root = loader.load();
+            sub1Group.getChildren().clear();
+            sub1Group.getChildren().add(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     public void loadScoresView() {

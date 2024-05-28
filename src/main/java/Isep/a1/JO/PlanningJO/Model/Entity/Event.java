@@ -10,12 +10,10 @@ import lombok.*;
 @ToString
 public class Event {
 
-    private int eventID; // Unique identifier for each event
-    private int sportID; // Foreign key referencing Sport table
-    private String eventName; // Name of the event
+    private String sportame; // Foreign key referencing Sport table
     private Date eventDate; // Date of the event
     private Time startTime; // Start time of the event
-    private String localization; // Venue of the event
-
+    private String nomSite; // Venue of the event
+    private String adress; // Address of the venue
 
 }

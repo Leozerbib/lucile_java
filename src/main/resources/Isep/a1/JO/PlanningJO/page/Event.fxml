@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="540.0" prefWidth="620.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="Isep.a1.JO.PlanningJO.Controler.fx.EventController">
+    <children>
+        <DatePicker fx:id="datePicker" />
+        <TextField fx:id="sportTextField" promptText="Sport Name" />
+        <TableView fx:id="eventTableView">
+            <columns>
+                <TableColumn fx:id="sportNameColumn" text="Sport Name" />
+                <TableColumn fx:id="eventDateColumn" text="Event Date" />
+                <TableColumn fx:id="startTimeColumn" text="Start Time" />
+                <TableColumn fx:id="nomSiteColumn" text="Nom Site" />
+                <TableColumn fx:id="adressColumn" text="Address" />
+            </columns>
+        </TableView>
+    </children>
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+</VBox>

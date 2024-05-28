@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane prefHeight="540.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Isep.a1.JO.PlanningJO.Controler.fx.ScoreControler">
+<Pane prefHeight="540.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Isep.a1.JO.PlanningJO.Controler.fx.ScoreControler">
    <children>
       <VBox prefHeight="540.0" prefWidth="620.0">
           <HBox alignment="CENTER" spacing="10.0">
@@ -24,7 +24,7 @@
                <Insets />
             </VBox.margin>
           </HBox>
-          <TableView fx:id="scoresTableView" maxWidth="611.0" prefHeight="325.0" prefWidth="611.0">
+          <TableView fx:id="scoresTableView" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="620.0">
               <columns>
                   <TableColumn fx:id="IdColumn" text="ID" />
                   <TableColumn fx:id="athleteIdColumn" text="Athlete ID" />
