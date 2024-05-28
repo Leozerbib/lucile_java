@@ -8,7 +8,7 @@ public class CountryRepo {
 	
 	public static final String GET_BY_COUNTRY = 
 			"Select * from counrty c "
-			+ "where c.Country = ?";
+			+ "where c.country = ?";
 	
 	public static final String GET_BY_CODE = 
 			"Select * from country c "

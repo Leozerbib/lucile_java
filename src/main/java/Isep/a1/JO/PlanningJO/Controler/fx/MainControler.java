@@ -99,4 +99,22 @@ public class MainControler {
             e.printStackTrace();
         }
     }
+    
+    @FXML
+    public void loadScoresCountryView() {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("page/ScoreCountry.fxml"));
+            System.out.println("ScoreControler initialize");
+            Parent root = new Region();
+            root = loader.load();
+            sub1Group.getChildren().clear();
+            sub1Group.getChildren().add(root);
+
+        } catch (IOException e) {
+            System.err.println("Failed to load Score.fxml: " + e.getMessage());
+            
+            e.printStackTrace();
+        }
+    }
 }

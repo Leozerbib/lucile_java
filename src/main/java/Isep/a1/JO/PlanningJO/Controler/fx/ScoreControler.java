@@ -63,7 +63,7 @@ public class ScoreControler {
 
     public void loadScores(Integer sportId) {
         scoresList = FXCollections.observableArrayList();
-        String query = "SELECT s.scoreid,s.athleteid, s.score, s.resultdate " +
+        String query = "SELECT s.scoreid,s.athleteid, s.score, s.resultdate,s.countryid " +
                        "FROM public.score s " +
                        "JOIN public.identifiant i ON s.athleteid = i.identifiant";
 
@@ -80,7 +80,8 @@ public class ScoreControler {
                 		rs.getInt("scoreid"),
                         rs.getInt("athleteid"),
                         rs.getFloat("score"),
-                        rs.getDate("resultdate")
+                        rs.getDate("resultdate"),
+                        rs.getString("countryid")
                 ));
             }
             scoresTableView.setItems(scoresList);

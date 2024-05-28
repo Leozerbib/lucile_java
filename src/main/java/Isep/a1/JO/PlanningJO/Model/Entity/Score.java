@@ -13,7 +13,7 @@ public class Score {
     public int athleteId; // Foreign key referencing Athlete table
     public float Score; // Score achieved in the event
     public Date resultDate; // Date when the score/result was recorded
-
+    public String countryId; // Foreign key referencing Country table
     // Getters and setters for private variables
     // Insert getters and setters here
 }
