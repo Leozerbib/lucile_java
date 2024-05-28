@@ -168,6 +168,7 @@ public class RegisterControler {
         Country country = countryBox.getValue();
         String password = passwordField.getText();
         int identifiant = Integer.parseInt(identifiantField.getText());
+        System.out.println(identifiant);
 
         if (!isValidName(name)) {
             nameError.setText("Nom invalide ou déjà existant");

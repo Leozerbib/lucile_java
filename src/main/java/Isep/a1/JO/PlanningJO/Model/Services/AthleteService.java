@@ -76,6 +76,7 @@ public class AthleteService {
 		stmt.setInt(5, createUser.getSport().getSportID());
 		stmt.setString(6, createUser.getCountry().getCode());
 		stmt.setString(7, createUser.getPassword());
+		stmt.setInt(8, createUser.getIdentifiant());
 		if (stmt.executeUpdate() == 1) {
 			System.out.println("Athlete inserted successfully");
 		}

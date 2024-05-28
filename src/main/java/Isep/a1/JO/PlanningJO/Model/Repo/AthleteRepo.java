@@ -47,7 +47,7 @@ public class AthleteRepo {
 	public static final String INSERT = 
 			"INSERT INTO athlete "
 			+ "(name,lastname, age, gender, sportid, countryid, password, identifiant) "
-			+ "VALUES (?, ?, ?, ?, ?, ?, ?, 'ooo') ";
+			+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?) ";
 	
 	public static final String update = "UPDATE athlete SET name = ? ";
 	public static final String delete = "DELETE FROM athlete WHERE id = ? ";
