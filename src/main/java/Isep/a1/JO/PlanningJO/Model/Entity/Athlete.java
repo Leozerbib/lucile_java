@@ -1,12 +1,14 @@
 package Isep.a1.JO.PlanningJO.Model.Entity;
 
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import Isep.a1.JO.PlanningJO.Config.ConnectionDB;
 import lombok.*;
 
 @Getter@Setter
@@ -31,19 +33,37 @@ public class Athlete {
 	
     public static List<Integer> genererListeIdentifiants() {
         List<Integer> identifiants = new ArrayList<>();
-        
-        // Ajouter des identifiants de 8 chiffres
-        identifiants.add(12345678);
-        identifiants.add(23456789);
-        identifiants.add(34567890);
-        identifiants.add(45678901);
-        identifiants.add(56789012);
-        identifiants.add(67890123);
-        identifiants.add(78901234);
-        identifiants.add(89012345);
-        identifiants.add(90123456);
-        identifiants.add(12345679); // Ajouter autant d'identifiants que nécessaire
-        
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            // Establish the connection
+            Connection conn = ConnectionDB.getConnection();
+
+            // Prepare the SQL query
+            String sql = "SELECT identifiant FROM public.identifiant";
+            pstmt = conn.prepareStatement(sql);
+
+            // Execute the query
+            rs = pstmt.executeQuery();
+
+            // Populate the list with the retrieved identifiers
+            while (rs.next()) {
+                int identifiant = rs.getInt("identifiant");
+                identifiants.add(identifiant);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Close the resources
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(identifiants);
         return identifiants;
     }
     
